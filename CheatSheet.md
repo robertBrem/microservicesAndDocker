@@ -19,20 +19,20 @@ Build image
 `docker build --tag=wildfly /var/lib/docker/dockerfiles/wildfly`
 
 Start datastore container  
-`docker run -di \  
--v /var/lib/docker/static-volume/roomservice-db:/var/lib/postgresql/data \  
---name roomservice-db-datastore postgres-datastore`
+`docker run -di \`  
+`-v /var/lib/docker/static-volume/roomservice-db:/var/lib/postgresql/data \`  
+`--name roomservice-db-datastore postgres-datastore`
 
 Connect with datastore container  
-`docker run -d \  
--e POSTGRES_PASSWORD=postgres \  
--p 5432:5432 \  
---volumes-from roomservice-db-datastore \  
---name roomservice-db postgres-db`
+`docker run -d \`  
+`-e POSTGRES_PASSWORD=postgres \`  
+`-p 5432:5432 \`  
+`--volumes-from roomservice-db-datastore \`  
+`--name roomservice-db postgres-db`
 
 Link containers  
-`docker run -p 8081:8080 -p 9991:9990 -d \  
---name roomservice --link roomservice-db:roomservice-db wildfly`
+`docker run -p 8081:8080 -p 9991:9990 -d \`  
+`--name roomservice --link roomservice-db:roomservice-db wildfly`
 
 Open bash in container  
 `docker exec -it roomservice bash`
