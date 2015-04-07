@@ -42,3 +42,6 @@ Open bash in container
 
 Copy files from container  
 `docker cp roomservice:/opt/jboss/wildfly/standalone/configuration /var/lib/docker/static-volume/roomservice-configuration`
+
+Show log of container  
+`docker logs roomservice`
