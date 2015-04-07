@@ -1,6 +1,6 @@
 # CheatSheet
 
-Install docker
+Install docker  
 `wget -qO- https://get.docker.com/ | sh`
 
 Start Fedora container  
