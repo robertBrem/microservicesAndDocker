@@ -46,5 +46,5 @@ Copy files from container
 Show log of container  
 `docker logs roomservice`
 
-Show information of container, for example the ip address:
+Show information of container, for example the ip address  
 `docker inspect roomservice`
